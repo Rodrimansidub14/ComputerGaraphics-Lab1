@@ -59,12 +59,11 @@ impl Framebuffer {
 
         let mut file = File::create(file_path)?;
 
-        // BMP file header
         file.write_all(&[
             0x42, 0x4D, // Signature "BM"
             (file_size & 0xFF) as u8, ((file_size >> 8) & 0xFF) as u8,
             ((file_size >> 16) & 0xFF) as u8, ((file_size >> 24) & 0xFF) as u8,
-            0, 0, 0, 0, // Reserved
+            0, 0, 0, 0, 
             (pixel_data_offset & 0xFF) as u8, ((pixel_data_offset >> 8) & 0xFF) as u8,
             ((pixel_data_offset >> 16) & 0xFF) as u8, ((pixel_data_offset >> 24) & 0xFF) as u8,
         ])?;

@@ -38,7 +38,6 @@ fn main() {
     // Rellenar el segundo polígono con color azul
     fill_polygon(&mut framebuffer, &polygon2, 0x0000FF); // Relleno azul
 
-    // Guardar el framebuffer en un archivo BMP
     framebuffer.render_buffer("output.bmp").expect("Failed to save BMP file");
 
     println!("Framebuffer rendered to output.bmp");
