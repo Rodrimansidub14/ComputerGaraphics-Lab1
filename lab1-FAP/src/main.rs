@@ -29,7 +29,7 @@ fn main() {
     // Definir los puntos del segundo polígono centrado en el cuadrante superior derecho
     // Ajustando las coordenadas para moverlo un poco a la izquierda y hacia abajo
     let polygon2 = vec![
-        (521, 235), (488, 186), (539, 151), (574, 202),
+        (521, 135), (488, 86), (539, 51), (574, 102),
     ];
 
     // Dibujar el segundo polígono con borde blanco más grueso
@@ -38,6 +38,18 @@ fn main() {
     // Rellenar el segundo polígono con color azul
     fill_polygon(&mut framebuffer, &polygon2, 0x0000FF); // Relleno azul
 
+    // Definir los puntos del tercer polígono centrado en la parte inferior
+    let polygon3 = vec![
+        (377, 500), (411, 450), (436, 500),
+    ];
+
+    // Dibujar el tercer polígono con borde blanco más grueso
+    draw_polygon(&mut framebuffer, &polygon3, 0xFFFFFF, 2); // Orilla blanca con grosor 2
+
+    // Rellenar el tercer polígono con color rojo
+    fill_polygon(&mut framebuffer, &polygon3, 0xFF0000); // Relleno rojo
+
+    // Guardar el framebuffer en un archivo BMP
     framebuffer.render_buffer("output.bmp").expect("Failed to save BMP file");
 
     println!("Framebuffer rendered to output.bmp");
