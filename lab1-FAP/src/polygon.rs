@@ -4,6 +4,7 @@ use crate::line_impl::Line;
 pub fn draw_polygon(framebuffer: &mut Framebuffer, points: &[(isize, isize)], border_color: u32, thickness: isize) {
     framebuffer.set_foreground_color(border_color);
 
+    // Desplazamiento para aumentar el grosor de la línea
     for offset in -thickness..=thickness {
         for i in 0..points.len() {
             let (x0, y0) = points[i];
